@@ -1,0 +1,35 @@
+version: 1
+required:
+  - id: readme
+    description: README.md file
+    paths:
+      - README.md
+  - id: toil-registration
+    description: TOIL registration documentation
+    paths:
+      - 01-toil-registration/*.md
+  - id: ethics-statement
+    description: Ethics statement documentation
+    paths:
+      - 03-ethics-statement/*.md
+  - id: licensing-readiness
+    description: Licensing readiness documentation
+    paths:
+      - 04-licensing-readiness/*.md
+optional:
+  - id: sell-sheet
+    description: Sell sheet materials
+    paths:
+      - sell-sheet/*
+  - id: pitch-deck
+    description: Pitch deck materials
+    paths:
+      - pitch-deck/*
+  - id: prototype-status
+    description: Prototype status materials
+    paths:
+      - prototype-status/*
+  - id: royalty
+    description: Royalty materials
+    paths:
+      - royalty/*

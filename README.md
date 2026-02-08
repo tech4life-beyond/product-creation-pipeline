@@ -21,3 +21,13 @@ This repository contains the official Tech4Life product development lifecycle fr
 ## Scope
 
 These frameworks are process standards. They do not contain private legal agreements or financial records.
+
+## Automation (CI)
+
+This repository includes a Product Pack validator used in CI. See [docs/VALIDATION_RULES.md](docs/VALIDATION_RULES.md) for the MVP rules and extension guidance.
+
+Run the validator locally:
+
+```bash
+python tools/t4l_validate_pack.py --path ../products
+```
