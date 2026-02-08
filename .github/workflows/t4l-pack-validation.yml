@@ -24,7 +24,7 @@ jobs:
         run: pip install pyyaml
 
       - name: Validate product packs in this repo
-        run: python tools/t4l_validate_pack.py --path .
+        run: python tools/t4l_validate_pack.py .
 
       - name: Checkout products repository (optional)
         if: ${{ env.PRODUCTS_REPO != '' }}
@@ -35,4 +35,4 @@ jobs:
 
       - name: Validate external products repository (optional)
         if: ${{ env.PRODUCTS_REPO != '' }}
-        run: python tools/t4l_validate_pack.py --path products
+        run: python tools/t4l_validate_pack.py products
