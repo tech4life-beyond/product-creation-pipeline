@@ -1,0 +1,38 @@
+name: T4L Product Pack Validation
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate-product-packs:
+    runs-on: ubuntu-latest
+    env:
+      PRODUCTS_REPO: ""
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install validator dependencies
+        run: pip install pyyaml
+
+      - name: Validate product packs in this repo
+        run: python tools/t4l_validate_pack.py --path .
+
+      - name: Checkout products repository (optional)
+        if: ${{ env.PRODUCTS_REPO != '' }}
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.PRODUCTS_REPO }}
+          path: products
+
+      - name: Validate external products repository (optional)
+        if: ${{ env.PRODUCTS_REPO != '' }}
+        run: python tools/t4l_validate_pack.py --path products
