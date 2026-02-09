@@ -4,7 +4,11 @@ This repository contains the official Tech4Life product development lifecycle fr
 
 ## Start Here
 
-Begin with the pipeline stages below.
+Begin with the pipeline stages below. The canonical validator path is
+`tools/t4l_validate_pack.py` and the canonical rules path is
+`rules/product_pack_rules.yml`. When consuming this repository in CI, pin to a
+tagged release (for example:
+`https://github.com/tech4life-beyond/product-creation-pipeline/tree/v1.0.0`).
 
 ## Pipeline Stages
 
