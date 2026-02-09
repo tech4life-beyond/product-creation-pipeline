@@ -38,13 +38,19 @@ Optional folders (sell sheet, pitch deck, prototype status, royalty) are allowed
 From the repo root:
 
 ```bash
-python tools/t4l_validate_pack.py --path ../products
+python tools/t4l_validate_pack.py ../products
 ```
 
 If you want to validate the current repository contents instead:
 
 ```bash
-python tools/t4l_validate_pack.py --path .
+python tools/t4l_validate_pack.py .
+```
+
+To validate a checked-out products repository in a `products/` folder:
+
+```bash
+python tools/t4l_validate_pack.py products
 ```
 
 ## Extending the rules
