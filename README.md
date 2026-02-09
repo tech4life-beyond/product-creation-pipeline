@@ -2,6 +2,10 @@
 
 This repository contains the official Tech4Life product development lifecycle frameworks used to convert ideas into TOIL-licensed products.
 
+## Start Here
+
+Begin with the pipeline stages below.
+
 ## Pipeline Stages
 
 1. [Concept Definition](01-concept-definition/Concept_Definition_Framework.md)
@@ -21,6 +25,10 @@ This repository contains the official Tech4Life product development lifecycle fr
 ## Scope
 
 These frameworks are process standards. They do not contain private legal agreements or financial records.
+
+## License
+
+Tech4Life Open Impact License (TOIL) v1.0
 
 ## Automation (CI)
 
