@@ -6,6 +6,13 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
+concurrency:
+  group: t4l-pack-validation-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate-product-packs:
     runs-on: ubuntu-latest
@@ -13,22 +20,24 @@ jobs:
       PRODUCTS_REPO: ""
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: "3.11"
 
       - name: Install validator dependencies
-        run: pip install pyyaml
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "pyyaml==6.0.3"
 
       - name: Validate product packs in this repo
         run: python tools/t4l_validate_pack.py .
 
       - name: Checkout products repository (optional)
         if: ${{ env.PRODUCTS_REPO != '' }}
-        uses: actions/checkout@v4
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
           repository: ${{ env.PRODUCTS_REPO }}
           path: products
