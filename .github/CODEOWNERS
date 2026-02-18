@@ -1,4 +1,7 @@
+# Default owners for the repository
 * @tech4life-beyond/owners @tech4life-beyond/architects
-/schema/ @tech4life-beyond/owners @tech4life-beyond/architects
+
+# Governance / automation
+/.github/ @tech4life-beyond/owners @tech4life-beyond/architects
 /tools/ @tech4life-beyond/owners @tech4life-beyond/architects
-/exports/ @tech4life-beyond/owners @tech4life-beyond/architects
+/rules/ @tech4life-beyond/owners @tech4life-beyond/architects
