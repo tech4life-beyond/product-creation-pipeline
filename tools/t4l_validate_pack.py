@@ -141,7 +141,10 @@ def validate_pack(pack_path: Path, required_rules: list[RuleItem]) -> PackResult
         issues.append(PackIssue(product_id_issue))
 
     date_targets: list[Path] = []
-    for directory in (pack_path / "01-toil-registration", pack_path / "06-product-release"):
+    for directory in (
+        pack_path / "01-toil-registration",
+        pack_path / "06-product-release",
+    ):
         if directory.exists():
             date_targets.extend(directory.rglob("*.md"))
     for issue in validate_dates_in_files(date_targets):
@@ -155,8 +158,12 @@ def validate_pack(pack_path: Path, required_rules: list[RuleItem]) -> PackResult
 
 
 def parse_args() -> argparse.Namespace:
-    default_path = (Path(__file__).resolve().parent.parent / ".." / "products").resolve()
-    default_rules = Path(__file__).resolve().parent.parent / "rules" / "product_pack_rules.yml"
+    default_path = (
+        Path(__file__).resolve().parent.parent / ".." / "products"
+    ).resolve()
+    default_rules = (
+        Path(__file__).resolve().parent.parent / "rules" / "product_pack_rules.yml"
+    )
     parser = argparse.ArgumentParser(description="Validate Tech4Life Product Packs.")
     parser.add_argument(
         "path",
