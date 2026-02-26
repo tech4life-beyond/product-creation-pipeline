@@ -178,6 +178,34 @@ Line endings are normalized to LF to ensure cross-platform reproducibility.
 
 ---
 
+# 8A. Working Without Terminal (GitHub Desktop Workflow)
+
+Tech4Life allows contributors to work without using the terminal, as long as governance discipline is preserved.
+
+If you use VS Code + GitHub Desktop:
+
+1. Open the relevant repository in VS Code.
+2. Make the required file changes according to pack requirements.
+3. Use GitHub Desktop to:
+   - Create a new branch.
+   - Commit changes with a clear summary.
+   - Push the branch.
+   - Create a Pull Request.
+4. CI will automatically run the validator:
+   ```
+   tools/t4l_validate_pack.py
+   ```
+5. If CI fails:
+   - Review the error output.
+   - Identify which required folder or file is missing.
+   - Correct the issue and commit again.
+
+Terminal usage is supported but not mandatory.
+
+Governance discipline is mandatory.
+
+---
+
 # 9. License
 
 Tech4Life Open Impact License (TOIL) v1.0
